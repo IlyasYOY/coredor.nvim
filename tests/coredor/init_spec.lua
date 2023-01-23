@@ -1,4 +1,4 @@
-local core = require "coredor.core"
+local core = require "coredor"
 
 describe("has suffix", function()
     it("nil parameter", function()
