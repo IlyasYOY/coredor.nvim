@@ -2,7 +2,7 @@ local core = require "coredor"
 local Path = require "plenary.path"
 
 ---Simple file wrapper
----TODO: Tests. 
+---TODO: Tests.
 ---@class coredor.File
 ---@field public path string
 ---@field public name string
