@@ -14,7 +14,7 @@ local function string_merge(strings, separator)
     local result = ""
     for number, line in ipairs(strings) do
         result = result .. line
-        -- add separator in case this is not las iteration
+        -- add separator in case this is not last iteration
         if number ~= #strings then
             result = result .. separator
         end

@@ -3,6 +3,7 @@ local Path = require "plenary.path"
 
 ---Simple file wrapper
 ---TODO: Tests.
+--
 ---@class coredor.File
 ---@field public path string
 ---@field public name string
@@ -15,7 +16,7 @@ File.__index = File
 ---@param glob string
 ---@return coredor.File[]
 function File.list(path, glob)
-    -- TODO: Speed this up a bit. Maybe I should use `plenary.scandir`.
+    -- NOTE: Speed this up a bit. Maybe I should use `plenary.scandir`.
     local files_as_text = vim.fn.globpath(path, glob)
     local files_pathes = core.string_split(files_as_text, "\n")
     local results = core.array_map(files_pathes, function(file_path)
@@ -39,6 +40,12 @@ function File:new(path)
         name = core.string_merge(name_with_extension_split, "."),
         _plenary_path = Path:new(path),
     }, self)
+end
+
+---return plenary object
+---@return Path
+function File:as_plenary()
+    return self._plenary_path
 end
 
 ---Reads file content as string
