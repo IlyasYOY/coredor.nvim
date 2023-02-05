@@ -99,8 +99,7 @@ end
 function File:change_name(new_name)
     local parent = self._plenary_path:parent()
     local new_file_path = parent / new_name
-    local result =
-        self._plenary_path:rename { new_name = new_file_path:expand() }
+    self._plenary_path:rename { new_name = new_file_path:expand() }
 end
 
 return File
