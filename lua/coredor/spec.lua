@@ -57,8 +57,8 @@ end
 ---@param name string?
 ---@param path string?
 function M.assert_file(file, name, path)
-    assert.are.equal(name, file.name, "wrong file name")
-    assert.are.equal(path, file.path, "wrong file path")
+    assert.are.equal(name, file:name(), "wrong file name")
+    assert.are.equal(path, file:path(), "wrong file path")
 end
 
 assert.list_size = M.assert_list_size
